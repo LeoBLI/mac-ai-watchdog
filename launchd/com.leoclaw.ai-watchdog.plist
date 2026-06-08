@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  LaunchAgent template for mac-ai-watchdog.
+  DO NOT edit __PROJECT_ROOT__ or __PYTHON3__ manually.
+  Run `bash scripts/install_launchd.sh` to generate the installed version.
+-->
+<plist version="1.0">
+<dict>
+
+    <key>Label</key>
+    <string>com.leoclaw.ai-watchdog</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>__PYTHON3__</string>
+        <string>__PROJECT_ROOT__/scripts/ai_watchdog.py</string>
+    </array>
+
+    <!-- Working directory set to project root so relative paths resolve correctly -->
+    <key>WorkingDirectory</key>
+    <string>__PROJECT_ROOT__</string>
+
+    <!-- Start immediately when loaded and on every login -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- launchd restarts the script if it exits unexpectedly -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- Prevent rapid restart loops on repeated crashes -->
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+
+    <!-- Capture any output that bypasses the Python logger -->
+    <key>StandardOutPath</key>
+    <string>__PROJECT_ROOT__/logs/launchd.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>__PROJECT_ROOT__/logs/launchd.stderr.log</string>
+
+</dict>
+</plist>

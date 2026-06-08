@@ -1,0 +1,27 @@
+# Logs — keep directory structure, ignore log content
+logs/*.log
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Generated / installed plist (produced by install_launchd.sh)
+# The template in launchd/ IS tracked; the installed version in ~/Library is not.
+launchd/*.installed.plist
+
+# Editor artifacts
+*.swp
+*.swo
+.idea/
+.vscode/
