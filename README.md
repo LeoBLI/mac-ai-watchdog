@@ -1,5 +1,9 @@
 # mac-ai-watchdog
 
+![Platform](https://img.shields.io/badge/platform-macOS%2012%2B-lightgrey?logo=apple)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 A macOS background service that monitors AI desktop apps and automatically restarts them when memory usage exceeds a configured threshold.
 
 ## v1 — ChatGPT Desktop
